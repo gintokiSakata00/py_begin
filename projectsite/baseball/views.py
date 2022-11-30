@@ -19,7 +19,8 @@ class ClubView(ListView):
     model = Club
     context_object_name = 'club'
     template_name = "club.html"
-
+    paginate_by=2
+    
     # This method is used to populate a dictionary to use as the template context.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,7 +37,7 @@ class PlayerView(ListView):
     model = Play
     context_object_name = 'play'
     template_name = "player.html"
-
+    paginate_by=1
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['header_text'] = 'List of Players'
@@ -50,7 +51,7 @@ class MatchView(ListView):
     model = Match
     context_object_name = 'match'
     template_name = "match.html"
-
+    paginate_by=1
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['header_text'] = 'List of Matches'
