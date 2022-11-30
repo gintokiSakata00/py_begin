@@ -37,7 +37,7 @@ class PlayerView(ListView):
     model = Play
     context_object_name = 'play'
     template_name = "player.html"
-    paginate_by=1
+    paginate_by=10
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['header_text'] = 'List of Players'
